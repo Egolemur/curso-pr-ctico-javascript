@@ -24,6 +24,10 @@ function areaTriangulo(base, altura) {
     return (base * altura) / 2;
 }
 
+function alturaTriangulo(lado, base) {
+    return Math.sqrt(lado**2 - ((base**2)/4));
+}
+
 console.groupEnd();
 
 // Código del círculo
@@ -102,4 +106,13 @@ function calcularAreaCirculo() {
     const valor = input.value;    
     const area = areaCirculo(valor);
     alert(area);
+}
+
+function calcularAltura() {
+    const lado = document.getElementById("InputLado"); 
+    const valorLado = lado.value;  
+    const base = document.getElementById("InputBase"); 
+    const valorBase = base.value;  
+    const altura = alturaTriangulo(valorLado, valorBase);
+    alert(altura);
 }
